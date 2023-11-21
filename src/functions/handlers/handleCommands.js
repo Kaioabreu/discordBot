@@ -21,6 +21,9 @@ module.exports = (client) => {
             }
         }
         const clientId = "1015656684166860921";
+        
+        console.log(config.token);
+
         const rest = new REST({ version: "9"}).setToken(config.token);
         
         // rest.put(Routes.applicationCommands(clientId), { body: [] })
