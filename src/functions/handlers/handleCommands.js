@@ -3,6 +3,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const config = require('../../config.json');
+require("dotenv").config();
 
 module.exports = (client) => {
     client.handleCommands = async() => {
@@ -21,10 +22,8 @@ module.exports = (client) => {
             }
         }
         const clientId = "1015656684166860921";
-        
-        console.log(config.token);
 
-        const rest = new REST({ version: "9"}).setToken(config.token);
+        const rest = new REST({ version: "9"}).setToken(process.env.TOKEN);
         
         // rest.put(Routes.applicationCommands(clientId), { body: [] })
         //     .then(() => console.log('Successfully deleted all application commands.'))

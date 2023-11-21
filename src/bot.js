@@ -1,4 +1,4 @@
-const config = require('./config.json')
+require("dotenv").config();
 const { GatewayIntentBits, Collection, Client } = require("discord.js");
 const fs = require("fs");
 
@@ -18,5 +18,4 @@ for (const folder of functionFolder) {
 }
 client.handleEvents();
 client.handleCommands();
-console.log(config.token);
-client.login(config.token);
+client.login(process.env.TOKEN);
