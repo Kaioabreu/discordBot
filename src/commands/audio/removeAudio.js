@@ -10,8 +10,16 @@ module.exports = {
         .addStringOption((option) => option.setName("nome").setDescription("nome do audio").setRequired(true)),
 
     async execute(interaction) {
-        _audioService.removeAudio(interaction.options.get('nome').value);
-        interaction.reply("Áudio removido!");
+        const audioName = interaction.options.get('nome').value;
+        if(_audioService.hasSound(audioName))
+        {
+            _audioService.removeAudio(audioName);
+            interaction.reply("Áudio removido!");
+        }
+        else 
+        {
+            interaction.reply("Áudio não encontrado!");
+        }
     }
 
 }
