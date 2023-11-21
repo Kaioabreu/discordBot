@@ -20,7 +20,7 @@ module.exports = (client) => {
                 console.log(`Command: ${command.data.name} added`);
             }
         }
-        const clientId = "1015656684166860921";
+        /*const clientId = "1015656684166860921";
         const rest = new REST({ version: "9"}).setToken(config.token);
         
         // rest.put(Routes.applicationCommands(clientId), { body: [] })
@@ -37,6 +37,6 @@ module.exports = (client) => {
             console.log("Successfully reloaded application (/) commands.");
         } catch (error) {
             console.error(error);
-        }
+        }*/
     }
 }
